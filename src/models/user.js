@@ -77,7 +77,7 @@ userSchema.methods.generateAuthToken = async function () {
     {
       _id: user.id.toString(),
     },
-    "thisismynewcourse"
+    process.env.JWT_SECRET
   );
 
   user.tokens = user.tokens.concat({ token });
