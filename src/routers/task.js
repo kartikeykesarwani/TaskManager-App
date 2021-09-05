@@ -6,7 +6,7 @@ const router = new express.Router();
 router.post("/tasks", auth, async (req, res) => {
   //const task = new Task(req.body);
 
-  const task = new Task({
+  const task = new Task({ 
     ...req.body,
     owner: req.user._id,
   });
@@ -23,7 +23,7 @@ router.post("/tasks", auth, async (req, res) => {
 //limit skip
 //GET /tasks?limit=10&skip=20
 //GET /tasks?sortBy=createdAt_desc
-router.get("/tasks", auth, async (req, res) => {
+router.get("/tasks", auth, async (req, res) => { 
   const match = {};
   const sort = {};
   if (req.query.sortBy) {
